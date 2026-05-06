@@ -18,8 +18,8 @@
 
 ### 1. 最佳模型表現
 根據實驗結果，系統在不同參數配置下的表現如下：
-*   **最低誤差 (RMSE)**：當 $N\_center=80$ 時，訓練 RMSE 達到最小值 **9.8693**。
-*   **最高幾何效率**：最佳平衡點為 $(N\_center=3, \sigma=10)$，此模型能以最短路徑（**50 步**）且最平滑的軌跡完成任務。
+*   **最低誤差 (RMSE)**：當 $N\text{}center=80$ 時，訓練 RMSE 達到最小值 **9.8693**。
+*   **最高幾何效率**：最佳平衡點為 $(N\text{}center=3, \sigma=10)$，此模型能以最短路徑（**50 步**）且最平滑的軌跡完成任務。
 
 | 最低誤差 (RMSE) | 最高幾何效率 |
 | :---: | :---: |
@@ -28,8 +28,8 @@
 
 ### 2. 參數敏感度分析 (Critical Insight)
 *   **N_center 的影響**：
-    *   **Underfitting**：當 $N\_center$ 過低（如 2）時，模型無法捕捉轉向趨勢，車輛離開起點沒多久便立即失控撞牆。
-    *   **Overfitting**：隨 $N\_center$ 增加（如 20 以上），雖然 RMSE 持續下降，但動態模擬中會出現不必要的微調使得迴轉半徑變大。
+    *   **Underfitting**：當 $N\text{}center$ 過低（如 2）時，模型無法捕捉轉向趨勢，車輛離開起點沒多久便立即失控撞牆。
+    *   **Overfitting**：隨 $N\text{}center$ 增加（如 20 以上），雖然 RMSE 持續下降，但動態模擬中會出現不必要的微調使得迴轉半徑變大。
 *   **碰撞偵測驗證**：實驗觀測到碰撞發生時感測器讀數精確停在 **2.0~3.0 單位**，驗證了物理引擎計算車體邊緣與軌道接觸的嚴謹性。
 
 | Underfitting | Overfitting |
@@ -44,7 +44,7 @@
 *   **語言**：Python 3.11
 *   **核心庫**：NumPy, Pandas, Scikit-learn
 *   **介面**：PyQt / UI Designer
-*   **模型架構**：RBFN 控制器（K-Means Clustering中心 + pseudo-inverse matrix 權重求解）
+*   **模型架構**：RBFN 控制器（K-Means Clustering + pseudo-inverse matrix 權重求解）
 
 ---
 
